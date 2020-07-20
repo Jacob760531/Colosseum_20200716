@@ -38,6 +38,13 @@ class LoginActivity : BaseActivity() {
 
                     if (codeNum == 200) {
 //                        로그인 성공
+
+//                        json => data => token 스트링 추출
+                        val data = json.getJSONObject("data")
+                        val token = data.getString("token")
+
+//                        얻어낸 토큰을 저장
+
                     }
                     else {
 //                        로그인 실패 => 토스트로 실패했다고 출력하자.
@@ -46,8 +53,6 @@ class LoginActivity : BaseActivity() {
                         runOnUiThread {
                             Toast.makeText(mContext,codeMsg,Toast.LENGTH_SHORT).show()
 
-//                        runOnUiThread {
-//                            Toast.makeText(mContext,"로그인 실패",Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
