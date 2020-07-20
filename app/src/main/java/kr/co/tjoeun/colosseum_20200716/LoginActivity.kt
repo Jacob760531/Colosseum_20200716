@@ -1,5 +1,6 @@
 package kr.co.tjoeun.colosseum_20200716
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
@@ -55,6 +56,10 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        signUpBtn.setOnClickListener {
+            val myIntent = Intent(mContext,SignUpActivity::class.java)
+            startActivity(myIntent)
+        }
 
     }
 
