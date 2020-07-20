@@ -12,6 +12,8 @@ class ContextUtil {
 //        저장해줄 데이터 항목 이름도 변수로 저장
         private val LOGIN_USER_TOKEN = "LOGIN_USER_TOKEN"
 
+
+
 //        setter => 데이터 (토큰값) 저장 기능
 
         fun setLoginUserToken(context: Context, token: String) {
@@ -22,6 +24,8 @@ class ContextUtil {
 //        열린 메모장에 token을 저장
             pref.edit().putString(LOGIN_USER_TOKEN,token).apply()
         }
+
+
 
 //        getter => 저장된 토큰을 리턴해주는 기능
 
