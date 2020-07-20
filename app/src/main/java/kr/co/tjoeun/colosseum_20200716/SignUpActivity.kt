@@ -32,7 +32,23 @@ class SignUpActivity : BaseActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 //                내용 변경 완료된 시점에 실행
 
-                Log.d("비번입력",s.toString())
+//                입력된 글자의 길이 확인
+//                비어있다면, "비밀번호를 입력해 주세요." 표시
+//                8글자가 안되면, "비밀번호가 너무 짧습니다." 표시
+//                그 이상이면, "사용해도 좋은 비밀번호 입니다."
+                val tempPw = passwordEdt.text.toString()
+
+                if (tempPw.isEmpty()) {
+//                    입력을 안한 경우
+                    passwordCheckResultTxt.text ="비밀번호를 입력해 주세요."
+                }
+                else if (tempPw.length < 8) {
+//                    길이가 부족한 경우
+                    passwordCheckResultTxt.text = "비밀번호가 너무 짧습니다."
+                }
+                else {
+                    passwordCheckResultTxt.text = "사용해도 좋은 비밀번호 입니다."
+                }
 
             }
 
