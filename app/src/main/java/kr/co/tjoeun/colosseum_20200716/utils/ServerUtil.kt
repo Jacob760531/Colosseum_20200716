@@ -134,7 +134,7 @@ class ServerUtil {
 
         }
 
-        //  회원가입 호출 기능
+        //  비밀번호 변경
         fun patchRequestSignUp(context: Context, currentPassword : String, newPassword : String, nickName: String, handler: JsonResponseHandler?) {
 
 //            서버 통신 담당 변수 (클라이언트 역할 수행 변수)
