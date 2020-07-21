@@ -112,7 +112,7 @@
                         android:tag="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투표하기"
+                        android:text="투표하기" />
 
                 </LinearLayout>
 
