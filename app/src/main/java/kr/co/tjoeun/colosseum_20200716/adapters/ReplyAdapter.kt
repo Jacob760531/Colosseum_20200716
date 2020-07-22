@@ -21,6 +21,8 @@ class ReplyAdapter(val mContext: Context, redId : Int, val mList : List<Reply>) 
 
         val row = tempRow!!
 
+
+
         return row
     }
 
