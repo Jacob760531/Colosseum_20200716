@@ -13,6 +13,9 @@ class User {
         fun getUserFromJson(json : JSONObject) : User {
             val u = User()
 
+            u.id = json.getInt("id")
+            u.email = json.getString("email")
+            u.nickname = json.getString("nick_name")
 
             return u
 
