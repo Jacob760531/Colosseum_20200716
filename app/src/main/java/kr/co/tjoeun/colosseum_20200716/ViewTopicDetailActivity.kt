@@ -1,5 +1,6 @@
 package kr.co.tjoeun.colosseum_20200716
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_view_topic_detail.*
+import kotlinx.android.synthetic.main.reply_list_item.*
 import kr.co.tjoeun.colosseum_20200716.adapters.ReplyAdapter
 import kr.co.tjoeun.colosseum_20200716.datas.Reply
 import kr.co.tjoeun.colosseum_20200716.datas.Topic
@@ -37,6 +39,14 @@ class ViewTopicDetailActivity : BaseActivity() {
 
 
     override fun setupEvents() {
+
+//        의견 등록하기 누르면 작성 화면으로
+
+        postReplyBtn.setOnClickListener {
+            val myIntent = Intent(mContext,EditReplyActivity::class.java)
+            startActivity(myIntent)
+
+        }
 
 //        버튼이 눌리면 할 일을 변수에 담아서 저장
         val voteCode = View.OnClickListener {
@@ -138,6 +148,7 @@ class ViewTopicDetailActivity : BaseActivity() {
 //    화면에 mTopic 기반으로 데이터 반영해주는 기능
 
     fun setTopicDataToUi() {
+
         topicTitleTxt.text = mTopic.title
         Glide.with(mContext).load(mTopic.imageUrl).into(topicImg)
 
